@@ -49,11 +49,6 @@ namespace EventManagemenet.Controllers
                     return View();
                 }
 
-                if (!ModelState.IsValid)
-                {
-                    return View("Add");
-                }
-
                 var uploads = Path.Combine(_environment.WebRootPath, "EquipmentImages");
 
                 foreach (var file in files)

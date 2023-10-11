@@ -10,6 +10,6 @@ namespace EventManagemenetApp.DataAccess.Interface
     public interface ILogin
     {
         Task<Registration> Login(string userName, string passWord);
-
+        bool UpdatePassword(Registration Registration);
     }
 }

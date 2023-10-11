@@ -53,7 +53,8 @@ namespace EventManagemenet.Controllers
                             }
                             if (RoleID == 2)
                             {
-                                return RedirectToAction("Dashboard", "Customer");
+                                ////return RedirectToAction("Dashboard", "Customer");
+                                return RedirectToAction("Index", "Home");
                             }
                         }
                     }
@@ -69,6 +70,29 @@ namespace EventManagemenet.Controllers
             {
                 throw;
             }
+        }
+
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            try
+            {
+                CookieOptions option = new CookieOptions();
+
+                if (Request.Cookies["EventChannel"] != null)
+                {
+                    option.Expires = DateTime.Now.AddDays(-1);
+                    Response.Cookies.Append("EventChannel", "", option);
+                }
+
+                HttpContext.Session.Clear();
+                return RedirectToAction("Login", "Login");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
 
         [NonAction]

@@ -35,5 +35,21 @@ namespace EventManagemenetApp.DataAccess.Services
             }
         }
 
+        public bool UpdatePassword(Registration Registration)
+        {
+            _context.Registration.Attach(Registration);
+            _context.Entry(Registration).Property(x => x.Password).IsModified = true;
+            int result = _context.SaveChanges();
+
+            if (result > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

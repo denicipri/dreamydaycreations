@@ -25,6 +25,8 @@ namespace EventManagemenetApp.EntityFramework
         public DbSet<Dishtypes> Dishtypes { get; set; }
         public DbSet<Light> Light { get; set; }
         public DbSet<Flower> Flower { get; set; }
+        public DbSet<BookingDetails> BookingDetails { get; set; }
+        public DbSet<BookingVenue> BookingVenue { get; set; }
 
 
     }

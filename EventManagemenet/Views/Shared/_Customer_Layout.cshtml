@@ -43,11 +43,27 @@
                     <ul>
                         <li class="active"><a href="~/Home/index">Home</a></li>
                         <li><a href="~/Home/AboutUs">About</a></li>
+                        <li><a href="~/Home/AboutUs">About</a></li>
                         @* <li><a href="./schedule.html">Schedule</a></li> *@
+                        @if (@Context.Session.GetString("Username") != null)
+                        {
+                            <li><a href="~/UserProfile/Profile">Profile</a></li>
+                            <li><a href="~/Customer/ChangePassword">Change Password</a></li>
+
+                        }
                         <li><a href="~/Home/Contact">Contacts</a></li>
                     </ul>
                 </nav>
-                <a href="~/Login/Login" class="primary-btn top-btn"><i class="fa fa-ticket"></i> Login</a>
+                @if (@Context.Session.GetString("Username") == null)
+                {
+                    <a href="~/Login/Login" class="primary-btn top-btn"><i class="fa fa-ticket"></i> Login</a>
+                }
+                else
+                {
+                    <a href="~/Login/LogOut" class="primary-btn top-btn"><i class="fa fa-ticket"></i> LogOut</a>
+
+                }
+
             </div>
             <div id="mobile-menu-wrap"></div>
         </div>
