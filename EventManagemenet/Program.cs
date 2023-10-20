@@ -22,6 +22,9 @@ builder.Services.AddTransient<IFood, FoodServices>();
 builder.Services.AddTransient<IDishtypes, DishtypesServices>();
 builder.Services.AddTransient<ILight, LightServices>();
 builder.Services.AddTransient<IFlower, FlowerServices>();
+builder.Services.AddTransient<IBookingVenue, BookingVenueServices>();
+builder.Services.AddTransient<IEvent, EventServices>();
+builder.Services.AddTransient<IBookEquipment, BookEquipmentServices>();
 
 builder.Services.AddSession(options =>
 {

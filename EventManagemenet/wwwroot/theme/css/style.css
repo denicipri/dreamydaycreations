@@ -1124,8 +1124,8 @@ ol {
 
 .footer-section {
 	background: #171822;
-	padding-top: 50px;
-	padding-bottom: 60px;
+	/*	padding-top: 50px;*/
+	padding-bottom: 10px;
 }
 
 .partner-logo {
