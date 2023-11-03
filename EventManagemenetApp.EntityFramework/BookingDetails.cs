@@ -18,7 +18,7 @@ namespace EventManagemenetApp.EntityFramework
         public DateTime? CreatedDate { get; set; }
         public string BookingApproval { get; set; }
         public DateTime? BookingApprovalDate { get; set; }
-        public string BookingCompletedFlag { get; set; }
+        public string? BookingCompletedFlag { get; set; }
     }
 
     [NotMapped]

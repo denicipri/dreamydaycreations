@@ -177,9 +177,7 @@ namespace EventManagemenetApp.DataAccess.Services
         {
             try
             {
-                BookingDetails bookingdetail = (from bookingdetails in _context.BookingDetails
-                                                where bookingdetails.BookingID == BookingID
-                                                select bookingdetails).Single();
+                BookingDetails bookingdetail = _context.BookingDetails.Where(x => x.BookingID == BookingID).FirstOrDefault();
 
                 bookingdetail.BookingCompletedFlag = "C";
                 _context.BookingDetails.Attach(bookingdetail);
