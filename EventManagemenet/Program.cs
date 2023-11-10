@@ -28,6 +28,7 @@ builder.Services.AddTransient<IBookEquipment, BookEquipmentServices>();
 builder.Services.AddTransient<IBookFood, BookFoodServices>();
 builder.Services.AddTransient<IBookingLight, BookingLightServices>();
 builder.Services.AddTransient<IBookFlower, BookFlowerServices>();
+builder.Services.AddTransient<ITotalbilling, ITotalbillingServices>();
 
 builder.Services.AddSession(options =>
 {
