@@ -40,33 +40,35 @@
                 Total Amount :-
                 <input id="Text5" value="@Model.TotalAmount" style="background-color: #666; color: #FFF;" ng-readonly="true" class="form-control" name="TotalLightCost" type="text" />
             </div>
-            <div print-remove class="form-group">
-                <input type='button' id='btn' value='Print' onclick='printDiv();'>
-            </div>
+
         </div>
     </div>
+    <div print-remove class="form-group">
+        <input type='button' id='btn' value='Print' onclick='printDiv();'>
+        <button type="button" onclick="downloadPDF()">Download PDF</button>
 
+    </div>
+
+    <script type="text/javascript">
+        window.jsPDF = window.jspdf.jsPDF;
+        var docPDF = new jsPDF();
+
+        function downloadPDF(invoiceNo) {
+
+            var elementHTML = document.querySelector("#DivIdToPrint");
+            docPDF.html(elementHTML, {
+                callback: function (docPDF) {
+                    docPDF.save("invoce" + '.pdf');
+                },
+                x: 15,
+                y: 15,
+                width: 170,
+                windowWidth: 650
+            });
+        }
+    </script>
 
 </div>
 
 
 
-@* <script type="text/javascript">
-
-
-    function printDiv() {
-
-        var divToPrint = document.getElementById('DivIdToPrint');
-
-        var newWin = window.open('', 'Print-Window');
-
-        newWin.document.open();
-
-        newWin.document.write('<html><body onload="window.print()">' + divToPrint.innerHTML + '</body></html>');
-
-        newWin.document.close();
-
-        setTimeout(function () { newWin.close(); }, 10);
-
-    }
-</script> *@
