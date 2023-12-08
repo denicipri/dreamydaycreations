@@ -16,5 +16,7 @@ namespace EventManagemenetApp.DataAccess.Interface
         int DeleteVenue(int id);
         Venue VenueByID(int id);
         bool CheckVenueNameAlready(string venueName);
+
+        HomePageViewModel EventLists();
     }
 }

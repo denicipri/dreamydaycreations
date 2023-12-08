@@ -47,6 +47,17 @@ namespace EventManagemenetApp.DataAccess.Services
             return IQueryableVenue;
         }
 
+        public HomePageViewModel EventLists()
+        {
+            var data = new HomePageViewModel();
+            data.Venues = _context.Venue.ToList();
+            data.Equipment = _context.Equipment.ToList();
+            data.Foods = _context.Food.ToList();
+            data.Flowers = _context.Flower.ToList();
+            data.Lights = _context.Light.ToList();
+            return data;
+        }
+
         public IEnumerable<Venue> ShowAllVenue()
         {
             return _context.Venue.ToList();

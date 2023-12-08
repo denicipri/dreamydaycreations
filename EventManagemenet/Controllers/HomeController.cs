@@ -1,4 +1,5 @@
 ﻿using EventManagemenet.Models;
+using EventManagemenetApp.DataAccess.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,15 +8,18 @@ namespace EventManagemenet.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IVenue _IVenue;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IVenue IVenue,ILogger<HomeController> logger)
         {
+            _IVenue = IVenue;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var data = _IVenue.EventLists();
+            return View(data);
         } 
         
         public IActionResult AboutUs()
