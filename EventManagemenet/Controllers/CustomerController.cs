@@ -34,11 +34,6 @@ namespace EventManagemenet.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult ChangePassword(ChangePasswordModel ChangePasswordModel)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(ChangePasswordModel);
-            }
-
             var password = EncryptionLibrary.EncryptText(ChangePasswordModel.Password);
             var registrationModel = _IRegistration.Userinformation(Convert.ToInt32(HttpContext.Session.GetString("UserID")));
 
