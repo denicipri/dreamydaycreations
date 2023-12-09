@@ -1,11 +1,13 @@
 ﻿@{
     Layout = "~/Views/Shared/_Customer_Layout.cshtml";
 }
-@if (ViewData["BookingMessage"] != null)
-{
-    <p class="alert alert-success" id="successMessage">@ViewData["BookingMessage"]</p>
-    <h3>Next Process BookEquipment</h3>
-    <p>
-        @Html.ActionLink("Click Here to Book Equipment", "Equipment", "BookEquipment")
-    </p>
-}
+<div class="container-fluid">
+    @if (ViewData["BookingMessage"] != null)
+    {
+        <p class="alert alert-success" id="successMessage">@ViewData["BookingMessage"]</p>
+        <h3>Next Process BookEquipment</h3>
+        <p>
+            @Html.ActionLink("Click Here to Book Equipment", "Equipment", "BookEquipment")
+        </p>
+    }
+</div>

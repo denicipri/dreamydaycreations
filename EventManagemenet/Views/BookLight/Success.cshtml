@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Customer_Layout.cshtml";
 }
+<div class="container-fluid">
 @if (ViewData["BookingLightingMessage"] != null)
 {
     <p class="alert alert-success" id="successMessage">@ViewData["BookingLightingMessage"]</p>
@@ -10,3 +11,4 @@
     </p>
 }
 
+</div>

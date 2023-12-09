@@ -172,5 +172,12 @@ namespace EventManagemenet.Controllers
             ViewBag.SliderImages = Images;
         }
 
+        [HttpGet]
+     public IActionResult Getimage(int id)
+        {
+            var Images = _IVenue.VenueByID(id).VenueFilePath;
+            return Json(Images);
+        }
+
     }
 }
