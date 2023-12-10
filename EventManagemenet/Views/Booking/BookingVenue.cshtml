@@ -11,7 +11,7 @@
 
             <div class="form-group">
                 <label asp-for="EventTypeID">Event Type</label>
-                <select asp-for="EventTypeID" class="form-control" asp-items="@(new SelectList(string.Empty, "EventID", "EventType"))"></select>
+                <select asp-for="EventTypeID" class="form-control" asp-items="@(new SelectList(string.Empty, "EventID", "EventType"))" onchange="geteventimage()"></select>
                 <span asp-validation-for="EventTypeID" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -41,30 +41,7 @@
 
     <div class="col-xs-offset-0 col-xs-6">
         <div id="wrap">
-            <div id="slider-holder">
-                @{
-                    var data = (List<EventManagemenetApp.EntityFramework.Venue>)ViewBag.SliderImages;
-
-                    for (int i = 0; i < (data.Count()); i++)
-                    {
-                        <div class="slide">
-                            <div style="background-color:black">@data[i].VenueName</div>
-                            <img src="/@data[i].VenueFilePath" width="400" height="300" alt="@data[i].VenueName">
-                        </div>
-                        <div id="btn-nav-holder">
-                            @if (i == 0)
-                            {
-                                <img src="/images/bn-slide-on.png" width="8" height="8" alt="" />
-                            }
-                            else
-                            {
-                                <img src="/images/bn-slide-off.png" width="8" height="8" alt="" />
-                            }
-                        </div>
-                    }
-                }
-            </div>
-            <div style="clear: both;"></div>
+            <img id="Image" src="" width="700" />
         </div>
     </div>
 </div>
@@ -207,7 +184,21 @@
 
     }
 
-    
+    function geteventimage() {
+        var Id = $("#EventTypeID").val();
+        $.ajax({
+            url: '/Booking/Getimage?id=' + Id, 
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                $('#Image').attr('src', "/"+data);
+
+            },
+            error: function (xhr, status, error) {
+                console.error('Error:', error);
+            }
+        });
+    }
 
 
 </script>

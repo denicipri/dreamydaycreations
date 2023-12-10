@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Customer_Layout.cshtml";
 }
-
+<div class="container-fluid">
 @if (ViewData["BookingFoodMessage"] != null)
 {
     <p class="alert alert-success" id="successMessage">@ViewData["BookingFoodMessage"]</p>
@@ -10,3 +10,4 @@
         @Html.ActionLink("Click Here to Book Lighting", "BookLight", "BookLight")
     </p>
 }
+</div>

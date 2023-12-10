@@ -25,7 +25,7 @@ namespace EventManagemenetApp.DataAccess.Services
 
                 var BookingDT = (from BD in _context.BookingDetails
                                  where BD.BookingNo == BookingNo
-                                 select new { BD.BookingNo, BD.BookingDate, BD.BookingID }).Single();
+                                 select new { BD.BookingNo, BD.BookingDate, BD.BookingID ,BD.Createdby}).Single();
 
 
                 int? TotalVenueCost = (from BD in _context.BookingVenue
@@ -59,6 +59,7 @@ namespace EventManagemenetApp.DataAccess.Services
                                    TotalFoodCost +
                                    TotalFlowerCost +
                                    TotalLightCost;
+                var user = _context.Registration.Where(x => x.ID == BookingDT.Createdby).FirstOrDefault();
 
                 DateTime? BDT = BookingDT.BookingDate;
                 string BookingDate = BDT.Value.ToString("dd/MM/yyyy");
@@ -73,7 +74,8 @@ namespace EventManagemenetApp.DataAccess.Services
                     TotalFoodCost = TotalFoodCost,
                     TotalFlowerCost = TotalFlowerCost,
                     TotalLightCost = TotalLightCost,
-                    TotalAmount = TotalAmount
+                    TotalAmount = TotalAmount,
+                    Email = user.EmailID
                 };
 
                 return billingmodel;

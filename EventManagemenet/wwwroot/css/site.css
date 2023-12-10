@@ -35,3 +35,27 @@ textarea {
         display: none;
     }
 }
+
+#slider-holder {
+    width: 100%; /* Adjust the width based on your design */
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    float: left;
+    width: 100%; /* Adjust the width based on your design */
+}
+
+    .slide img {
+        display: block;
+        width: 100%; /* Adjust the width based on your design */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+#btn-nav-holder {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+}

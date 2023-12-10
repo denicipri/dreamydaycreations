@@ -11,6 +11,7 @@ namespace EventManagemenetApp.EntityFramework
     public class BillingModel
     {
         public string BookingNo { get; set; }
+        public string Email { get; set; }
         public int? BookingID { get; set; }
         public string BookingDate { get; set; }
         public int? TotalVenueCost { get; set; }

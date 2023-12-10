@@ -24,32 +24,4 @@
             </div>
         </div>
     </form>
-    <div class="col-xs-offset-0 col-xs-6">
-        <div id="wrap">
-            <div id="slider-holder">
-                @{
-                    var data = (List<EventManagemenetApp.EntityFramework.Equipment>)ViewBag.SliderEquipmentImages;
-
-                    for (int i = 0; i < (data.Count()); i++)
-                    {
-                        <div class="slide">
-                            <div style="background-color:black">@data[i].EquipmentName</div>
-                            <img src="/@data[i].EquipmentFilePath" width="400" height="300" alt="@data[i].EquipmentName">
-                        </div>
-                        <div id="btn-nav-holder">
-                            @if (i == 0)
-                            {
-                                <img src="/images/bn-slide-on.png" width="8" height="8" alt="" />
-                            }
-                            else
-                            {
-                                <img src="/images/bn-slide-off.png" width="8" height="8" alt="" />
-                            }
-                        </div>
-                    }
-                }
-            </div>
-            <div style="clear: both;"></div>
-        </div>
-    </div>
 </div>
