@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7frZDTeNQEiJulGarbL/SQAAAAACAAAAAAAQZgAAAAEAACAAAACN68V67fmrFdozPnEQTuLVxNDT69a8f31BrcrMpGI0ywAAAAAOgAAAAAIAACAAAAAmi4xMsr33TsNsXrDJloNlQNjajOt6eWAs8g3OJiVyAYAAAAAB5/GP/5RYaUg7a/ctP5a0G8IB73n4l9eOykS345fck5X4KddtVBxxoxbJ54XIyEWczao137V6z3Ph9DgrTfb5DhT1fWXUgRpz1Gs9mj0X08k17COdwHanpxl2K7Q77e4E5K2ejKGqsMWTASzCbpTn4TMq5A5PR4TQ3LSfr8acj0AAAAA6YLdniStmiawG9yXTvKGSyPyKFIHoqJqxlV8a1TbgLe853zLATc09fFzpCqn4nmGvHTz3vCbeZBZeBIPUpF41</EncryptedPassword>
+    <History>True|2023-12-13T19:27:01.2426631Z;True|2023-12-14T00:53:23.8225069+05:30;True|2023-12-14T00:50:44.2817535+05:30;True|2023-12-14T00:44:35.2597636+05:30;True|2023-12-14T00:34:45.2932530+05:30;True|2023-12-14T00:29:58.3682592+05:30;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="EventDb">
+      <Value>Server=tcp:eventmanagement1233.database.windows.net,1433%3bInitial Catalog=eventDb%3bPersist Security Info=False%3bUser ID=event%3bPassword=P%40123456%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
